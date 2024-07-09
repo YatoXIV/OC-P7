@@ -1,0 +1,186 @@
+@use "../utils/variables" as *;
+@use "../utils/mixins" as *;
+@use "../base/typography" as *;
+
+.LogementDetails {
+  @include center-flex;
+  flex-direction: column;
+
+  width: 80%;
+  margin: 50px 0;
+
+  .description {
+    display: flex;
+    flex-direction: column;
+    margin: 10px 0;
+
+    .description-information {
+      display: flex;
+      flex-direction: row;
+      margin-bottom: 30px;
+      justify-content: space-between;
+
+      .description-title-location-tag {
+        display: flex;
+        flex-direction: column;
+
+        h1 {
+          color: $primary-color;
+          font-family: $font-family-base;
+          font-size: $logement-title-font-size;
+          font-style: normal;
+          font-weight: $font-weight-bold;
+          line-height: $font-line-height;
+          margin: 0;
+        }
+
+        .location {
+          color: $primary-color;
+          font-family: $font-family-base;
+          font-size: $logement-location-font-size;
+          font-style: normal;
+          font-weight: $font-weight-bold;
+          line-height: $font-line-height;
+
+          p {
+            margin: 0;
+          }
+        }
+
+        .tags {
+          display: flex;
+          justify-content: flex-start;
+          margin-top: 10px;
+
+          span {
+            padding: 0 10px;
+            border-radius: 10px;
+            background: $primary-color;
+            color: $color-text;
+            text-align: center;
+            font-family: $font-family-base;
+            font-size: $logement-tags-font-size;
+            font-style: normal;
+            font-weight: $font-weight-bold;
+            line-height: $font-line-height;
+            margin-right: 10px;
+          }
+        }
+      }
+
+      .description-host-rating {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+
+        .description-host {
+          display: flex;
+          justify-content: flex-end;
+          align-items: center;
+
+          .host-name {
+            color: $primary-color;
+            text-align: right;
+            font-family: $font-family-base;
+            font-size: $logement-host-name-font-size;
+            font-style: normal;
+            font-weight: $font-weight-bold;
+            line-height: $font-line-height;
+            margin-right: 10px;
+          }
+
+          .host-picture {
+            width: 64px;
+            height: 64px;
+            border-radius: 50%;
+          }
+        }
+
+        .description-rating {
+          @include center-flex;
+
+          .star {
+            color: $color-star-full;
+            margin: 0 10px;
+            font-size: $logement-star-size;
+            text-align: right;
+          }
+
+          .star.filled {
+            color: $primary-color;
+          }
+        }
+      }
+    }
+
+    .description-collapse {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      gap: 76px;
+      .collapsible {
+        .collapsible-header {
+          padding: 0px 10px;
+        }
+      }
+    }
+  }
+
+  @media (max-width: $mobile-breakpoint) {
+    width: $mobile-screen-width;
+    margin: 27px 0;
+    .description {
+      .description-information {
+        flex-direction: column;
+
+        .description-title-location-tag {
+          width: 100%;
+          margin-bottom: 10px;
+          h1 {
+            font-size: 18px;
+          }
+          .location {
+            font-size: 14px;
+            line-height: 142.6%;
+          }
+          .tags {
+            span {
+              font-size: 10px;
+            }
+          }
+        }
+
+        .description-host-rating {
+          width: 100%;
+          flex-direction: row-reverse;
+          justify-content: space-between;
+          .description-host {
+            .host-name {
+              font-size: 12px;
+            }
+          }
+          .description-rating {
+            .star {
+              font-size: 20px;
+              margin: 0 5px;
+            }
+          }
+        }
+      }
+
+      .description-collapse {
+        flex-direction: column;
+        gap: 20px;
+        .collapsible {
+          .collapsible-header {
+            padding: 0px 10px;
+            font-size: 13px;
+          }
+          .collapsible-inner {
+            font-size: 13px;
+          }
+        }
+      }
+    }
+  }
+}

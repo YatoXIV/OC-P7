@@ -1,0 +1,50 @@
+@use "../utils/variables" as *;
+@use "../utils/mixins" as *;
+@use "../base/typography" as *;
+
+.Banner {
+  height: $banner-height;
+  border-radius: $banner-radius;
+  @include center-flex;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+
+  &:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: $banner-bg-overlay;
+    border-radius: inherit;
+    mix-blend-mode: darken;
+  }
+
+  p {
+    @include center-flex;
+    position: relative;
+    color: $banner-text-color;
+    font-family: $font-family-base;
+    font-size: $banner-text-size;
+    font-weight: $font-weight-bold;
+    line-height: $font-line-height;
+    z-index: 1;
+    margin: 0;
+  }
+
+  @include respond-to("mobile") {
+    height: $banner-height-mobile;
+    border-radius: $banner-radius-mobile;
+    justify-content: left;
+
+    p {
+      padding-left: 10px;
+      justify-content: left;
+      align-items: flex-start;
+      width: 170px;
+      font-size: $banner-text-size-mobile;
+    }
+  }
+}

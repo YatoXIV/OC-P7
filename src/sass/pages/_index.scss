@@ -1,0 +1,15 @@
+@use "../utils/variables" as *;
+@use "../utils/mixins" as *;
+
+body {
+  margin: 0 auto;
+  padding: 0;
+  max-width: $body-max-width;
+  @include center-flex;
+
+  #root {
+    @include center-flex;
+    flex-direction: column;
+    width: 100%;
+  }
+}

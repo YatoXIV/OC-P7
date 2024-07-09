@@ -1,0 +1,43 @@
+@use "../utils/variables" as *;
+@use "../utils/mixins" as *;
+
+header {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: $header-width;
+  padding-top: $header-padding-top;
+  gap: $header-gap;
+
+  .header_nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .logo {
+    @include center-flex;
+    width: $logo-width;
+    height: $logo-height;
+    img {
+      width: $logo-width;
+      height: $logo-height;
+    }
+  }
+
+  @include respond-to("mobile") {
+    padding-top: $header-padding-top-mobile;
+    width: $header-width-mobile;
+    gap: $header-gap-mobile;
+
+    .logo {
+      width: $logo-width-mobile;
+      height: $logo-height-mobile;
+      justify-content: flex-start;
+      img {
+        width: $logo-width-mobile;
+        height: $logo-height-mobile;
+      }
+    }
+  }
+}

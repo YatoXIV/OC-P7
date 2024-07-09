@@ -1,0 +1,43 @@
+@use "../utils/variables" as *;
+@use "../utils/mixins" as *;
+@use "../base/typography" as *;
+
+footer {
+  @include center-flex;
+  flex-direction: column;
+  background: $footer-bg-color;
+  color: $footer-text-color;
+  height: $footer-height;
+  width: 100%;
+
+  .footer-container {
+    @include center-flex;
+    flex-direction: column;
+    gap: $footer-gap;
+
+    .logo {
+      width: auto;
+      height: $footer-logo-height;
+    }
+
+    p {
+      text-align: center;
+      font-family: $font-family-base;
+      font-size: $footer-font-size;
+      font-weight: $font-weight-bold;
+      margin: 0;
+    }
+  }
+
+  @include respond-to("mobile") {
+    .footer-container {
+      width: $footer-container-mobile-width;
+      height: $footer-container-mobile-height;
+      gap: $footer-gap;
+
+      p {
+        font-size: $footer-font-size-mobile;
+      }
+    }
+  }
+}
