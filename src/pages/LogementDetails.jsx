@@ -2,12 +2,12 @@ import { useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import accommodationsData from "../data/data.json";
 import Collapsible from "../components/Collapsible";
-import Tag from "./LogementDetails/Tag";
-import Host from "./LogementDetails/Host";
-import Rating from "./LogementDetails/Rating";
-import Description from "./LogementDetails/Description";
-import Equipments from "./LogementDetails/Equipement";
-import Carousel from "./LogementDetails/Caroussel";
+import Tag from "../components/LogementDetails/Tag";
+import Host from "../components/LogementDetails/Host";
+import Rating from "../components/LogementDetails/Rating";
+import Description from "../components/LogementDetails/Description";
+import Equipments from "../components/LogementDetails/Equipement";
+import Carousel from "../components/LogementDetails/Caroussel";
 import PageTitle from "../components/PageTitle";
 
 const LogementDetails = () => {

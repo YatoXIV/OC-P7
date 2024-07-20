@@ -1,6 +1,6 @@
 import Loader from "../components/Loader";
 import PageTitle from "../components/PageTitle";
-import CardContainer from "./Home/CardContainer";
+import CardContainer from "../components/Home/CardContainer";
 
 const Home = () => {
   return (
