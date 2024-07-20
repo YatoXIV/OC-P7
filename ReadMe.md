@@ -1,6 +1,6 @@
 # Kasa
 
-Code du projet 6 d'intégrateur web.
+Code du projet 7 d'intégrateur web.
 
 ## Information pour le lancer le code
 
